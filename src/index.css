@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.fading-line {
+  position: relative;
+}
+
+.fading-line::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #ffffff, transparent);
+}
