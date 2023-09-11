@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'height': 'height'
+      },
       colors: {
         dark: '#121212',
         contrast: '#FFD700',

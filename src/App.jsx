@@ -14,7 +14,7 @@ function App() {
           <div id="about">
             <About />
           </div>
-          <div id="projects">
+          <div id="projects" className="mx-20 px-20">
             <Projects/>
           </div>
           <div id="contact">
