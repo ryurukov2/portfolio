@@ -14,7 +14,7 @@ function App() {
           <div id="about">
             <About />
           </div>
-          <div id="projects" className="mx-20 px-20">
+          <div id="projects" className="text-center">
             <Projects/>
           </div>
           <div id="contact">

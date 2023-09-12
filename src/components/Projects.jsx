@@ -68,6 +68,10 @@ export function Projects() {
       demo: "demo1.mp4",
     },
   ];
+  const setModalPosition = () => {
+    setHoveredElementOffsetX(boxRef.current.offsetLeft);
+    setHoveredElementOffsetY(boxRef.current.offsetTop);
+  };
   const handleCardClickEvent = (e, project) => {
     if (!isInTransition) {
       if (!isHoveredCard) {
@@ -78,17 +82,9 @@ export function Projects() {
     }
   };
   const handleMouseEnterCard = (e) => {
+    boxRef.current = e.currentTarget;
     if (!isInTransition) {
-      boxRef.current = e.currentTarget;
-      // boxRef.current = e.currentTarget.parentNode;
-      // console.log(e.currentTarget.parentNode)
-      // console.log(index)
-      const x = boxRef.current.offsetLeft;
-      // console.log(boxRef.current.offsetLeft)
-      const y = boxRef.current.offsetTop;
-      setHoveredElementOffsetX(x);
-      setHoveredElementOffsetY(y);
-      // magic +1 is to save a variable and use isHoveredCard as both a boolean and the variable that stores which card is hovered. If the element with id 0 is hovered, the variable is falsy.
+      setModalPosition();
     }
     setIsHoveredCard(true);
   };
@@ -99,14 +95,20 @@ export function Projects() {
     setIsClickedOn(false);
     setIsInTransition(true);
   };
+  const handleTransitionEnd = () => {
+    setIsInTransition(false);
+    if (isClickedOn === false) {
+      setModalPosition();
+    }
+  };
 
   return (
     // <div className="grid grid-cols-2 px-20 mx-20 gap-20 justify-around">
-    <div>
+    <div className="w-10/12 inline-block">
       click {isClickedOn ? "true" : "false"} / transition{" "}
       {isInTransition ? "true" : "false"} / hover{" "}
       {isHoveredCard ? "true" : "false"} /{boxRef.current?.offsetLeft}
-      <div className="flex relative group justify-items-center flex-row flex-wrap gap-20 justify-between transition-transform">
+      <div className="flex relative group flex-row flex-wrap justify-around gap-20 transition-transform 2xl:justify-between">
         {projects.map((project, index) => (
           <div
             className={`relative peer`}
@@ -129,7 +131,7 @@ export function Projects() {
           <Modal
             isClickedOn={isClickedOn}
             handleCloseModalClick={handleCloseModalClick}
-            setIsInTransition={setIsInTransition}
+            handleTransitionEnd={handleTransitionEnd}
             modalStyles={modalStyles}
           />
         )}
