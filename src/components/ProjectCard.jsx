@@ -1,7 +1,12 @@
 import { GhButton } from "./GhButton";
 import { useEffect, useRef, useState } from "react";
 import { VscGithub } from "react-icons/vsc";
-
+import { BiLogoReact, BiLogoTailwindCss } from "react-icons/bi";
+import projectTrackerImage from '../images/projectTracker.png';
+const iconMap = {
+  BiLogoReact: <BiLogoReact />,
+  BiLogoTailwindCss: <BiLogoTailwindCss />
+};
 const ProjectCard = ({
   title,
   summary,
@@ -22,7 +27,7 @@ const ProjectCard = ({
     >
       <h1 className="whitespace-normal m-auto">{title}</h1>
       <img
-        src="src/assets/projectTracker.png"
+        src={projectTrackerImage}
         alt="img"
         className="max-h-48 object-contain m-auto"
       />
@@ -46,9 +51,10 @@ const ProjectCard = ({
             target={githubLinks[0]}
           />
           <div className="flex flex-row flex-wrap justify-evenly">
-            {icons?.map((Icon, idx) => (
-              <Icon key={idx} className="" />
-            ))}
+            {icons?.map((Icon, idx) => {
+              const Ic = iconMap[Icon];
+              return Ic
+})}
           </div>
         </div>
         <div className="grow">
@@ -63,10 +69,6 @@ const ProjectCard = ({
         </div>
       </div>
       <div className="whitespace-normal m-auto">
-        {/* Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-        veritatis eius, culpa non commodi quisquam illo fugit praesentium
-        ratione omnis beatae ut doloremque amet harum numquam aut natus
-      consectetur saepe. */}
         {summary}
       </div>
     </div>
