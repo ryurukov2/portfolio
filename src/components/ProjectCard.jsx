@@ -1,12 +1,79 @@
 import { GhButton } from "./GhButton";
 import { useEffect, useRef, useState } from "react";
 import { VscGithub } from "react-icons/vsc";
-import { BiLogoReact, BiLogoTailwindCss } from "react-icons/bi";
-import projectTrackerImage from '../images/projectTracker.png';
+import {
+  BiLogoCss3,
+  BiLogoReact,
+  BiLogoTailwindCss,
+  BiLogoDjango,
+  BiLogoJavascript,
+  BiLogoHtml5,
+} from "react-icons/bi";
+import projectTrackerImage from "../images/projectTracker.png";
 const iconMap = {
-  BiLogoReact: <BiLogoReact />,
-  BiLogoTailwindCss: <BiLogoTailwindCss />
+  BiLogoReact: BiLogoReact,
+  BiLogoTailwindCss: BiLogoTailwindCss,
+  BiLogoDjango: BiLogoDjango,
+  BiLogoJavascript: BiLogoJavascript,
+  BiLogoCss3: BiLogoCss3,
+  BiLogoHtml5: BiLogoHtml5,
 };
+
+function GhButtonsLayout({
+  technologies,
+  icons,
+  githubLinks,
+  handleMouseLeaveCard,
+}) {
+  return (
+    <div className="flex w-full items-center justify-items-center space-x-4">
+      {technologies.length === 1 ? (
+        <div className="grow justify-items-center">
+          <GhButton
+            handleMouseLeaveCard={handleMouseLeaveCard}
+            text={"Code repository"}
+            target={githubLinks[0]}
+          />
+          <div className="flex flex-row flex-wrap justify-evenly">
+            {icons[0]?.map((Icon, idx) => {
+              const Ic = iconMap[Icon];
+              return <Ic key={idx} />;
+            })}
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="grow justify-items-center">
+            <GhButton
+              handleMouseLeaveCard={handleMouseLeaveCard}
+              text={"Frontend Code"}
+              target={githubLinks[0]}
+            />
+            <div className="flex flex-row flex-wrap justify-evenly">
+              {icons[0]?.map((Icon, idx) => {
+                const Ic = iconMap[Icon];
+                return <Ic key={idx} />;
+              })}
+            </div>
+          </div>
+          <div className="grow">
+            <GhButton
+              handleMouseLeaveCard={handleMouseLeaveCard}
+              text={"Backend Code"}
+              target={githubLinks[1]}
+            />
+            <div className="flex flex-row flex-wrap justify-evenly">
+              {icons[1]?.map((Icon, idx) => {
+                const Ic = iconMap[Icon];
+                return <Ic key={idx} />;
+              })}
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 const ProjectCard = ({
   title,
   summary,
@@ -19,10 +86,11 @@ const ProjectCard = ({
   handleMouseEnterCard,
   handleMouseLeaveCard,
   BiLogoReact,
+  index,
 }) => {
   return (
     <div
-      className="flex max-w-md h-full relative flex-wrap text-center bg-gray-600 text-white p-6 rounded-lg hover:shadow-lg duration-300 ease-in-out transition-all delay-100"
+      className="flex max-w-md h-full relative flex-wrap text-center bg-gray-600 text-white p-6 rounded-lg hover:shadow-lg duration-300 ease-in-out transition-all delay-100 border-gray-600 border-4 hover:border-gray-400"
       // hover:max-w-full hover:h-full
     >
       <h1 className="whitespace-normal m-auto">{title}</h1>
@@ -43,34 +111,14 @@ const ProjectCard = ({
           </a>
         </button>
       </div>
-      <div className="flex w-full items-center justify-items-center space-x-4">
-        <div className="grow justify-items-center">
-          <GhButton
-            handleMouseLeaveCard={handleMouseLeaveCard}
-            text={"Frontend Code"}
-            target={githubLinks[0]}
-          />
-          <div className="flex flex-row flex-wrap justify-evenly">
-            {icons?.map((Icon, idx) => {
-              const Ic = iconMap[Icon];
-              return Ic
-})}
-          </div>
-        </div>
-        <div className="grow">
-          <GhButton
-            handleMouseLeaveCard={handleMouseLeaveCard}
-            text={"Backend Code"}
-            target={githubLinks[1]}
-          />
-          <div className="flex flex-row flex-wrap justify-evenly">
-            <BiLogoReact />
-          </div>
-        </div>
-      </div>
-      <div className="whitespace-normal m-auto">
-        {summary}
-      </div>
+      <GhButtonsLayout
+        technologies={technologies}
+        icons={icons}
+        githubLinks={githubLinks}
+        handleMouseLeaveCard={handleMouseLeaveCard}
+        key={index}
+      />
+      <div className="whitespace-normal m-auto">{summary}</div>
     </div>
   );
 };

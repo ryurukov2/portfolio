@@ -1,41 +1,42 @@
 [
+
+  {
+    "title": "Crypto Wallet",
+    "summary": "A website for tracking crypto wallets, showing current values, profit/loss information and transaction history.",
+    "technologies": [["Django", "CSS"]],
+    "icons": [[ "BiLogoTailwindCss", "BiLogoDjango"]],
+    "githubLinks": [
+      "https://github.com/ryurukov2/walletTracker"
+    ],
+    "liveLink": "https://wallet.ryurukov.dev"
+  },
   {
     "title": "Project Tracker",
     "summary": "A website where users can add projects and tasks with various importance and track their progress. It supports CRUD operations and uses token authentication.",
-    "technologies": ["React", "Tailwind"],
-    "icons": ["BiLogoReact", "BiLogoTailwindCss"],
+    "technologies": [["React", "Tailwind"], ["Django"]],
+    "icons": [["BiLogoReact", "BiLogoTailwindCss"], ["BiLogoDjango"]],
     "githubLinks": [
       "https://github.com/ryurukov2/learningReact-REST",
       "https://github.com/ryurukov2/React-REST-backend"
     ],
-    "liveLink": "https://project-1.example.com",
+    "liveLink": "https://ryurukov2.github.io/learningReact-REST/",
     "demo": "demo1.mp4"
   },
   {
-    "title": "Project 2",
-    "summary": "This is project 2",
-    "technologies": ["React", "Tailwind"],
+    "title": "Portfolio",
+    "summary": "The website you are currently on! It is a simple website built with React and tailwind CSS.",
+    "technologies": [["React", "Tailwind"]],
+    "icons": [["BiLogoReact", "BiLogoTailwindCss"]],
     "githubLinks": [
-      "https://github.com/project-1",
-      "https://github.com/ryurukov2/React-REST-backend"
+      "https://github.com/ryurukov2/portfolio"
     ],
-    "liveLink": "https://project-1.example.com"
-  },
-  {
-    "title": "Project 3",
-    "summary": "This is project 3",
-    "technologies": ["React", "Tailwind"],
-    "githubLinks": [
-      "https://github.com/project-1",
-      "https://github.com/ryurukov2/React-REST-backend"
-    ],
-    "liveLink": "https://project-1.example.com"
+    "liveLink": "https://ryurukov.dev"
   },
   {
     "title": "Project Tracker 2",
     "summary": "ananas",
     "technologies": ["React", "Tailwind"],
-    "icons": ["BiLogoReact", "BiLogoTailwindCss"],
+    "icons": [["BiLogoReact", "BiLogoTailwindCss"], ["BiLogoDjango"]],
     "githubLinks": [
       "https://github.com/project-1",
       "https://github.com/ryurukov2/React-REST-backend"

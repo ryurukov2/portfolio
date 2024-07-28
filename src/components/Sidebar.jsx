@@ -8,7 +8,7 @@ const scrollTo = (id) => {
   });
 };
 const Sidebar = () => {
-  const [activeSection, setActiveSection] = useState("projects");
+  const [activeSection, setActiveSection] = useState("about");
 
   const handleScroll = () => {
     const sections = ["projects", "about", "contact"];
@@ -39,6 +39,14 @@ const Sidebar = () => {
     <nav className="p-6 fixed top-0 bottom-0 flex items-center justify-center text-lg">
       <div className="flex p-6 flex-col items-center space-y-4 fading-line">
         <ul className="space-y-2 text-contrast">
+        <li
+            onClick={() => scrollTo("about")}
+            className={`focus:outline-none hover:cursor-pointer ${
+              activeSection === "about" ? "underline" : ""
+            }`}
+          >
+            About Me
+          </li>
           <li
             onClick={() => scrollTo("projects")}
             className={`focus:outline-none hover:cursor-pointer ${
@@ -47,14 +55,7 @@ const Sidebar = () => {
           >
             Projects
           </li>
-          <li
-            onClick={() => scrollTo("about")}
-            className={`focus:outline-none hover:cursor-pointer ${
-              activeSection === "about" ? "underline" : ""
-            }`}
-          >
-            About Me
-          </li>
+
           <li
             onClick={() => scrollTo("contact")}
             className={`focus:outline-none hover:cursor-pointer ${

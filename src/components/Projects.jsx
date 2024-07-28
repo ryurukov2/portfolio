@@ -1,8 +1,8 @@
 import { Modal } from "./Modal";
 import { useRef, useState } from "react";
 import ProjectCard from "./ProjectCard";
-import projectData from '../config/projectsData.json';
-import { BiLogoReact, BiLogoTailwindCss } from "react-icons/bi";
+import projectData from "../config/projectsData.json";
+
 
 export function Projects() {
   const boxRef = useRef(null);
@@ -21,12 +21,9 @@ export function Projects() {
       ? `translate(-${hoveredElementOffsetX}px, -${hoveredElementOffsetY}px)`
       : "none",
   };
-  const iconMap = {
-    BiLogoReact: <BiLogoReact />,
-    BiLogoTailwindCss: <BiLogoTailwindCss />
-  };
+
   const projects = projectData;
-  
+
   const setModalPosition = () => {
     setHoveredElementOffsetX(boxRef.current.offsetLeft);
     setHoveredElementOffsetY(boxRef.current.offsetTop);
@@ -68,7 +65,13 @@ export function Projects() {
       {isInTransition ? "true" : "false"} / hover{" "}
       {isHoveredCard ? "true" : "false"} /{boxRef.current?.offsetLeft} */}
 
-      <h1 className="text-4xl mb-8">Here are some of my projects:</h1>
+      <h1 className="text-4xl mb-8">
+        Here are some of{" "}
+        <span className="text-4xl font-extrabold text-yellow-400">
+          {" "}
+          my projects:{" "}
+        </span>
+      </h1>
       <div className="flex relative group flex-row flex-wrap justify-around gap-20 transition-transform 2xl:justify-between">
         {projects.map((project, index) => (
           <div
@@ -79,12 +82,13 @@ export function Projects() {
             onClick={(e) => handleCardClickEvent(e, project)}
             onMouseLeave={() => handleMouseLeaveCard()}
           >
+            {/* <div className="absolute inset-0 border-2 border-transparent hover:border-indigo-600 rounded-md transition-all duration-500 pointer-events-none"></div> */}
             <ProjectCard
               {...project}
               setIsClickedOn={setIsClickedOn}
               handleMouseEnterCard={handleMouseEnterCard}
               handleMouseLeaveCard={handleMouseLeaveCard}
-              BiLogoReact={BiLogoReact}
+              index={index}
             />
           </div>
         ))}
