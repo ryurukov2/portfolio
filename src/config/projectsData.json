@@ -1,16 +1,19 @@
 [
 
   {
-    "title": "Crypto Wallet",
-    "summary": "A website for tracking crypto wallets, showing current values, profit/loss information and transaction history.",
+    "id": 0,
+    "title": "Crypto Wallet Tracker",
+    "summary": "A website for tracking crypto wallets, showing current values, profit/loss information and transaction history. It uses data from multiple free APIs to calculate the information needed.",
     "technologies": [["Django", "CSS"]],
-    "icons": [[ "BiLogoTailwindCss", "BiLogoDjango"]],
+    "icons": [["BiLogoDjango", "BiLogoCss3"]],
     "githubLinks": [
       "https://github.com/ryurukov2/walletTracker"
     ],
-    "liveLink": "https://wallet.ryurukov.dev"
+    "liveLink": "https://wallet.ryurukov.dev",
+    "images": "walletTracker.png"
   },
   {
+    "id": 1,
     "title": "Project Tracker",
     "summary": "A website where users can add projects and tasks with various importance and track their progress. It supports CRUD operations and uses token authentication.",
     "technologies": [["React", "Tailwind"], ["Django"]],
@@ -20,28 +23,34 @@
       "https://github.com/ryurukov2/React-REST-backend"
     ],
     "liveLink": "https://ryurukov2.github.io/learningReact-REST/",
+    "images": "projectTracker.png",
+
     "demo": "demo1.mp4"
   },
   {
+    "id": 2,
     "title": "Portfolio",
-    "summary": "The website you are currently on! It is a simple website built with React and tailwind CSS.",
+    "summary": "The website you are currently on! It is a simple website built with React and tailwind CSS for the purpose of showcasing my personal projects.",
     "technologies": [["React", "Tailwind"]],
     "icons": [["BiLogoReact", "BiLogoTailwindCss"]],
     "githubLinks": [
       "https://github.com/ryurukov2/portfolio"
     ],
-    "liveLink": "https://ryurukov.dev"
+    "liveLink": "https://ryurukov.dev",
+    "images": "portfolio.png"
   },
   {
-    "title": "Project Tracker 2",
-    "summary": "ananas",
-    "technologies": ["React", "Tailwind"],
-    "icons": [["BiLogoReact", "BiLogoTailwindCss"], ["BiLogoDjango"]],
+    "id": 3,
+    "title": "Summarizer extension",
+    "summary": "This is a Chrome extension which allows you to paste long text such as an article and summarizes it for you using ChatGPT. It supports logging in via Google through Oauth and uses a Django backend.",
+    "technologies": [["Javascript", "CSS"], ["Django"]],
+    "icons": [["BiLogoJavascript", "BiLogoCss3"], ["BiLogoDjango"]],
     "githubLinks": [
-      "https://github.com/project-1",
-      "https://github.com/ryurukov2/React-REST-backend"
+      "https://github.com/ryurukov2/ChromeExtension",
+      "https://github.com/ryurukov2/summarizer"
     ],
-    "liveLink": "https://project-1.example.com",
+    "liveLink": "https://github.com/ryurukov2/ChromeExtension/blob/main/README.md",
+    "images": "summarizer.png",
     "demo": "demo1.mp4"
   }
 ]

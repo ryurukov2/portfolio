@@ -9,7 +9,6 @@ import {
   BiLogoJavascript,
   BiLogoHtml5,
 } from "react-icons/bi";
-import projectTrackerImage from "../images/projectTracker.png";
 const iconMap = {
   BiLogoReact: BiLogoReact,
   BiLogoTailwindCss: BiLogoTailwindCss,
@@ -81,13 +80,16 @@ const ProjectCard = ({
   icons,
   githubLinks,
   liveLink,
+  images,
   demo,
   setIsClickedOn,
   handleMouseEnterCard,
   handleMouseLeaveCard,
   BiLogoReact,
   index,
+  projectImg
 }) => {
+  console.log(projectImg)
   return (
     <div
       className="flex max-w-md h-full relative flex-wrap text-center bg-gray-600 text-white p-6 rounded-lg hover:shadow-lg duration-300 ease-in-out transition-all delay-100 border-gray-600 border-4 hover:border-gray-400"
@@ -95,7 +97,7 @@ const ProjectCard = ({
     >
       <h1 className="whitespace-normal m-auto">{title}</h1>
       <img
-        src={projectTrackerImage}
+        src={projectImg}
         alt="img"
         className="max-h-48 object-contain m-auto"
       />
@@ -107,7 +109,7 @@ const ProjectCard = ({
           }}
         >
           <a href={liveLink} className="text-blue-300">
-            View the website live
+            View the project live
           </a>
         </button>
       </div>

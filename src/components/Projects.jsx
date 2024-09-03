@@ -1,10 +1,29 @@
 import { Modal } from "./Modal";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import projectData from "../config/projectsData.json";
 
 
 export function Projects() {
+
+  
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      const projectsWithImages = await Promise.all(
+        projectData.map(async (project) => {
+          const image = await import(/* @vite-ignore */`../images/${project.images}`);
+          return { ...project, images: image.default };
+        })
+      );
+      setProjects(projectsWithImages);
+    };
+
+    loadProjects();
+  }, []);
+
+
   const boxRef = useRef(null);
   // const [isHovered, setIsHovered] = useState(false);
   const [isClickedOn, setIsClickedOn] = useState(false);
@@ -21,8 +40,6 @@ export function Projects() {
       ? `translate(-${hoveredElementOffsetX}px, -${hoveredElementOffsetY}px)`
       : "none",
   };
-
-  const projects = projectData;
 
   const setModalPosition = () => {
     setHoveredElementOffsetX(boxRef.current.offsetLeft);
@@ -57,7 +74,6 @@ export function Projects() {
       setModalPosition();
     }
   };
-
   return (
     // <div className="grid grid-cols-2 px-20 mx-20 gap-20 justify-around">
     <div className="w-10/12 inline-block">
@@ -89,6 +105,7 @@ export function Projects() {
               handleMouseEnterCard={handleMouseEnterCard}
               handleMouseLeaveCard={handleMouseLeaveCard}
               index={index}
+              projectImg={project.images}
             />
           </div>
         ))}
