@@ -89,7 +89,6 @@ const ProjectCard = ({
   index,
   projectImg
 }) => {
-  console.log(projectImg)
   return (
     <div
       className="flex max-w-md h-full relative flex-wrap text-center bg-gray-600 text-white p-6 rounded-lg hover:shadow-lg duration-300 ease-in-out transition-all delay-100 border-gray-600 border-4 hover:border-gray-400"
