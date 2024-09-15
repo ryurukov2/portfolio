@@ -13,6 +13,9 @@ export default {
         dark: '#121212',
         contrast: '#FFD700',
       },
+      screens: {
+        'md': '800px',
+      },
     },
   },
   plugins: [],

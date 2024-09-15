@@ -13,19 +13,16 @@ export function Projects() {
     const loadProjects = async () => {
       const projectsWithImages = await Promise.all(
         projectData.map(async (project) => {
-          const image = await import(/* @vite-ignore */`../images/${project.images}`);
-          return { ...project, images: image.default };
+          const imageUrl = new URL(`../images/${project.images}`, import.meta.url).href;
+          return { ...project, images: imageUrl };
         })
       );
       setProjects(projectsWithImages);
     };
-
     loadProjects();
-  }, []);
-
+  }, [projectData]);
 
   const boxRef = useRef(null);
-  // const [isHovered, setIsHovered] = useState(false);
   const [isClickedOn, setIsClickedOn] = useState(false);
   const [isHoveredCard, setIsHoveredCard] = useState(0);
   const [isInTransition, setIsInTransition] = useState(false);
@@ -75,11 +72,9 @@ export function Projects() {
     }
   };
   return (
-    // <div className="grid grid-cols-2 px-20 mx-20 gap-20 justify-around">
+
     <div className="w-10/12 inline-block">
-      {/* click {isClickedOn ? "true" : "false"} / transition{" "}
-      {isInTransition ? "true" : "false"} / hover{" "}
-      {isHoveredCard ? "true" : "false"} /{boxRef.current?.offsetLeft} */}
+
 
       <h1 className="text-4xl mb-8">
         Here are some of{" "}
@@ -98,7 +93,6 @@ export function Projects() {
             onClick={(e) => handleCardClickEvent(e, project)}
             onMouseLeave={() => handleMouseLeaveCard()}
           >
-            {/* <div className="absolute inset-0 border-2 border-transparent hover:border-indigo-600 rounded-md transition-all duration-500 pointer-events-none"></div> */}
             <ProjectCard
               {...project}
               setIsClickedOn={setIsClickedOn}

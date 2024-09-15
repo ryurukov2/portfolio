@@ -6,8 +6,8 @@ const MainLayout = ({ children }) => {
     <div className="min-h-screen">
       <Header />
       <main className="flex relative">
-        <div className="flex-grow w-10/12">{children}</div>
-        <div className="flex w-2/12">
+        <div className="flex-grow w-fit md:w-10/12">{children}</div>
+        <div className="flex w-6/12 sm:w-4/12 md:w-2/12">
           <Sidebar />
         </div>
       </main>
