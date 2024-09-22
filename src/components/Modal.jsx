@@ -30,13 +30,14 @@ export function Modal({
         isClickedOn ? `opacity-100` : `opacity-0`
       } bg-gray-600 rounded-lg transition-[transform,height,width,opacity] delay-200 duration-500`}
       style={modalStyles}
+      onTransitionEnd={() => handleTransitionEnd()}
     >
       {isClickedOn && (
         <OutsideAlerter
           handleCloseModalClick={handleCloseModalClick}
           isClickedOn
         >
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" onTransitionEnd={() => handleTransitionEnd()}>
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-gray-600 text-white p-6 rounded-lg max-w-3xl w-full relative">
         <button
           className="absolute top-4 right-4 text-white text-2xl"
