@@ -1,6 +1,4 @@
 import { GhButton } from "./GhButton";
-import { useEffect, useRef, useState } from "react";
-import { VscGithub } from "react-icons/vsc";
 import {
   BiLogoCss3,
   BiLogoReact,
@@ -9,6 +7,7 @@ import {
   BiLogoJavascript,
   BiLogoHtml5,
 } from "react-icons/bi";
+import { SiSqlite } from "react-icons/si";
 const iconMap = {
   BiLogoReact: BiLogoReact,
   BiLogoTailwindCss: BiLogoTailwindCss,
@@ -16,6 +15,7 @@ const iconMap = {
   BiLogoJavascript: BiLogoJavascript,
   BiLogoCss3: BiLogoCss3,
   BiLogoHtml5: BiLogoHtml5,
+  SiSqlite: SiSqlite,
 };
 
 function GhButtonsLayout({
@@ -105,9 +105,16 @@ const ProjectCard = ({
           className="bg-green-700 px-4 py-2 rounded-md"
           onMouseOver={(e) => {
             e.stopPropagation();
+            handleMouseLeaveCard();
           }}
         >
-          <a href={liveLink} className="text-blue-300">
+          <a target="_blank" href={liveLink} className="text-blue-300" onClick={(e)=>{
+            e.stopPropagation();
+          }
+          }onMouseOver={(e)=>{
+            e.stopPropagation();
+            handleMouseLeaveCard();
+          }}>
             View the project live
           </a>
         </button>

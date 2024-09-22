@@ -4,28 +4,33 @@
     "id": 0,
     "title": "Crypto Wallet Tracker",
     "summary": "A website for tracking crypto wallets, showing current values, profit/loss information and transaction history. It uses data from multiple free APIs to calculate the information needed.",
-    "technologies": [["Django", "CSS"]],
-    "icons": [["BiLogoDjango", "BiLogoCss3"]],
+    "technologies": [["Django", "CSS", "SqLite"]],
+    "icons": [["BiLogoDjango", "BiLogoCss3", "SiSqlite"]],
     "githubLinks": [
       "https://github.com/ryurukov2/walletTracker"
     ],
     "liveLink": "https://wallet.ryurukov.dev",
-    "images": "walletTracker.png"
+    "images": "walletTracker.png",
+    "extendedSummary": "Wallet Tracker is a project that allows users to search for any wallet address on the Ethereum network and view analytics about it. It calculates realized and unrealized P/L figures based on the prices of the token at the time it was purchased, sold, and current prices. It also displays the current prices of tokens in the wallet. It uses Django Channels to pass information to the frontend upon it being calculated, then stores the last calculated values in a database for fast loading times in subsequent loads. When there is new data available, a notification icon appears next to the wallet address to let the user know they should refresh for the latest data.",
+    "exampleData": "As a test example, you can use the following address to see how the website works: 0xe1672b1b598809d01dc15f1721e879f9d9b4fb71",
+    "hostedOn": "A Linode VPS instance behind an Nginx proxy."
   },
   {
     "id": 1,
     "title": "Project Tracker",
     "summary": "A website where users can add projects and tasks with various importance and track their progress. It supports CRUD operations and uses token authentication.",
-    "technologies": [["React", "Tailwind"], ["Django"]],
-    "icons": [["BiLogoReact", "BiLogoTailwindCss"], ["BiLogoDjango"]],
+    "technologies": [["React", "Tailwind"], ["Django", "SqLite"]],
+    "icons": [["BiLogoReact", "BiLogoTailwindCss"], ["BiLogoDjango", "SiSqlite"]],
     "githubLinks": [
       "https://github.com/ryurukov2/learningReact-REST",
       "https://github.com/ryurukov2/React-REST-backend"
     ],
     "liveLink": "https://ryurukov2.github.io/learningReact-REST/",
     "images": "projectTracker.png",
-
-    "demo": "demo1.mp4"
+    "demo": "demo1.mp4",
+    "extendedSummary": "Project tracker is a website that allows users to add, edit, delete, set the importance of and manage various tasks for projects they are building. Users can add other users to their project so that all of them see the same tasks for each project and everyone can work on the same tasks and be updated about their status. It also has analytics for the projects each user is assigned to, showing what percentage of the tasks are completed and how many tasks of each level of importance there are. It has custom Auth functionality allowing for sign-ups and logins as well as a modern interface.",
+    "exampleData": "To test the functionality of the website, you can log in with the following username and password: Username - testuser; Password - testpass",
+    "hostedOn": "Github Pages for the front-end and Pythonanywhere for the back-end."
   },
   {
     "id": 2,
@@ -37,20 +42,25 @@
       "https://github.com/ryurukov2/portfolio"
     ],
     "liveLink": "https://ryurukov.dev",
-    "images": "portfolio.png"
+    "images": "portfolio.png",
+    "extendedSummary": "This is my personal portfolio website which is designed to display my projects. It is built with React and Tailwind and allows for anyone visiting the website to send an email through the form at the bottom of the page.",
+    "hostedOn": "A Linode VPS instance behind an Nginx proxy."
   },
   {
     "id": 3,
     "title": "Summarizer extension",
     "summary": "This is a Chrome extension which allows you to paste long text such as an article and summarizes it for you using ChatGPT. It supports logging in via Google through Oauth and uses a Django backend.",
-    "technologies": [["Javascript", "CSS"], ["Django"]],
-    "icons": [["BiLogoJavascript", "BiLogoCss3"], ["BiLogoDjango"]],
+    "technologies": [["Javascript", "CSS"], ["Django", "SqLite"]],
+    "icons": [["BiLogoJavascript", "BiLogoCss3"], ["BiLogoDjango", "SiSqlite"]],
     "githubLinks": [
       "https://github.com/ryurukov2/ChromeExtension",
       "https://github.com/ryurukov2/summarizer"
     ],
     "liveLink": "https://github.com/ryurukov2/ChromeExtension/blob/main/README.md",
     "images": "summarizer.png",
-    "demo": "demo1.mp4"
+    "demo": "demo1.mp4",
+    "extendedSummary": "Summarizer is a Chrome extension that allows users to paste long text articles and get a summary of it in response. It allows the user to choose which model they want to use for the summary and stores a summary history for each account so you can come back to it later. It is useful for people who read a lot of news articles or technical ones and can save a lot of time. Due to the cost of using OpenAI's API for the summaries, the extension requires the user to be logged in to be able to use it. Signing up and logging in is done via Google Oauth2.",
+    "exampleData": "Due to Google's login security measures requiring SMS codes, I am unable to provide a test Google account to login with, however, you can sign-up with your own Google account to test the extension. The only information shared with the app is your gmail address and your Google account ID, as per Google's Oauth2 standard for data sharing.",
+    "hostedOn": "Github for the front-end and a Linode VPS instance behind an Nginx proxy for the backend."
   }
 ]

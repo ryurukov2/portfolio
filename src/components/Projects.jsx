@@ -10,6 +10,7 @@ export function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
+    // load the images from projectsData.json
     const loadProjects = async () => {
       const projectsWithImages = await Promise.all(
         projectData.map(async (project) => {
