@@ -7,7 +7,7 @@ import {
   BiLogoJavascript,
   BiLogoHtml5,
 } from "react-icons/bi";
-import { SiSqlite } from "react-icons/si";
+import { SiSqlite, SiNginx } from "react-icons/si";
 const iconMap = {
   BiLogoReact: BiLogoReact,
   BiLogoTailwindCss: BiLogoTailwindCss,
@@ -16,6 +16,7 @@ const iconMap = {
   BiLogoCss3: BiLogoCss3,
   BiLogoHtml5: BiLogoHtml5,
   SiSqlite: SiSqlite,
+  SiNginx: SiNginx,
 };
 
 function GhButtonsLayout({
@@ -26,7 +27,7 @@ function GhButtonsLayout({
 }) {
   return (
     <div className="flex w-full items-center justify-items-center space-x-4">
-      {technologies.length === 1 ? (
+      {icons.length === 1 ? (
         <div className="grow justify-items-center">
           <GhButton
             handleMouseLeaveCard={handleMouseLeaveCard}

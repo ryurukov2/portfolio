@@ -6,7 +6,7 @@ function About() {
           <span className="text-6xl font-extrabold text-yellow-400">Hi!</span>{" "}
           I'm Radoslav, a 24-year-old programmer with a passion for coding and
           problem-solving. I've been exploring programming through personal
-          projects and I love learning and working with new technologies.
+          projects and I love learning and working with new technologies. I don't know everything but given enough time, I can learn anything!
         </div>
       </div>
     </>

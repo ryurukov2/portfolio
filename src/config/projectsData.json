@@ -4,8 +4,8 @@
     "id": 0,
     "title": "Crypto Wallet Tracker",
     "summary": "A website for tracking crypto wallets, showing current values, profit/loss information and transaction history. It uses data from multiple free APIs to calculate the information needed.",
-    "technologies": [["Django", "CSS", "SqLite"]],
-    "icons": [["BiLogoDjango", "BiLogoCss3", "SiSqlite"]],
+    "technologies": [["Django", "CSS", "Javascript", "SqLite", "Nginx"]],
+    "icons": [["BiLogoDjango", "BiLogoJavascript", "BiLogoCss3", "SiSqlite", "SiNginx"]],
     "githubLinks": [
       "https://github.com/ryurukov2/walletTracker"
     ],
@@ -19,7 +19,7 @@
     "id": 1,
     "title": "Project Tracker",
     "summary": "A website where users can add projects and tasks with various importance and track their progress. It supports CRUD operations and uses token authentication.",
-    "technologies": [["React", "Tailwind"], ["Django", "SqLite"]],
+    "technologies": [["React", "Tailwind", "Django", "SqLite"]],
     "icons": [["BiLogoReact", "BiLogoTailwindCss"], ["BiLogoDjango", "SiSqlite"]],
     "githubLinks": [
       "https://github.com/ryurukov2/learningReact-REST",
@@ -36,8 +36,8 @@
     "id": 2,
     "title": "Portfolio",
     "summary": "The website you are currently on! It is a simple website built with React and tailwind CSS for the purpose of showcasing my personal projects.",
-    "technologies": [["React", "Tailwind"]],
-    "icons": [["BiLogoReact", "BiLogoTailwindCss"]],
+    "technologies": [["React", "Javascript", "Tailwind", "Nginx"]],
+    "icons": [["BiLogoReact", "BiLogoJavascript", "BiLogoTailwindCss", "SiNginx"]],
     "githubLinks": [
       "https://github.com/ryurukov2/portfolio"
     ],
@@ -50,8 +50,8 @@
     "id": 3,
     "title": "Summarizer extension",
     "summary": "This is a Chrome extension which allows you to paste long text such as an article and summarizes it for you using ChatGPT. It supports logging in via Google through Oauth and uses a Django backend.",
-    "technologies": [["Javascript", "CSS"], ["Django", "SqLite"]],
-    "icons": [["BiLogoJavascript", "BiLogoCss3"], ["BiLogoDjango", "SiSqlite"]],
+    "technologies": [["Javascript", "CSS","Django", "SqLite", "Nginx"]],
+    "icons": [["BiLogoJavascript", "BiLogoCss3"], ["BiLogoDjango", "SiSqlite", "SiNginx"]],
     "githubLinks": [
       "https://github.com/ryurukov2/ChromeExtension",
       "https://github.com/ryurukov2/summarizer"
