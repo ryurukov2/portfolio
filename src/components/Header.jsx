@@ -15,7 +15,7 @@ const Header = () => {
         >
           <FaGithub className="inline w-6 h-6" />
         </a>
-        <a href="mailto:youremail@gmail.com" aria-label="Email">
+        <a href="mailto:radoslav.vy@gmail.com" aria-label="Email">
           <FaEnvelope className="inline w-6 h-6" />
         </a>
       </div>
